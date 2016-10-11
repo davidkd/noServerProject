@@ -1,0 +1,40 @@
+<body>
+
+  <header class='shop-header'>
+    <h1>SHOP</h1>
+  </header>
+
+  <section class='products-container'>
+    <div class='image-container' ng-repeat='product in products1'>
+      <div class='product-images' ng-style="{'background-image': 'url({{product.image}})'}" ng-click='popUp(product.image)'>
+      </div>
+      <div class='product-info'>
+
+          {{product.description}}</br>
+          ${{product.price}}
+          <button ng-click='addToCart(product.id)'>add to cart</button>
+
+      </div>
+    </div>
+  </section>
+
+  <section class='shop-background2'></section>
+
+  <section class='products-container'>
+    <div class='image-container' ng-repeat='product in products2'>
+      <div class='product-images' ng-style="{'background-image': 'url({{product.image}})'}" ng-click='popUp2(product.image)'>
+      </div>
+      <div class='product-info'>
+
+          {{product.description}}</br>
+          ${{product.price}}
+          <button ng-click='addToCart(product.id)'>add to cart</button>
+
+      </div>
+    </div>
+  </section>
+
+  <div class='pop-up-opaque' ng-click='disappear()'>
+    <div class='pop-up' ng-style='selectedImage'></div>
+  </div>
+</body>
